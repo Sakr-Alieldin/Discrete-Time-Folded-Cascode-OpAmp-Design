@@ -38,33 +38,22 @@ Final grade: 8.5/10
 ## Repository Contents
 
 ### Report & Documentation
-- **[Final Report](report/)** — final report submitted for EE4520
-  - Table of results and specifications
-  - Design methodology and optimization process
-  - Performance analysis and key design tradeoffs
-  - Annotated schematics with node voltages and branch currents
-  - Complete set of simulation plots (transient, AC, noise)
-  
-### Schematics
-- **[Schematics Directory](schematics/)** — Circuit design files with detailed annotations
-  - Full folded-cascode opamp with gain-boosting
-  - Cascode bias circuit and CMFB
-  - Node voltage labels and branch currents for verification
-  - High-resolution images for documentation
+- **[Final Report](final_report.pdf)** — Complete project report with design methodology, results, and performance analysis
+- **[Project Instructions](Project_instructions.pdf)** — Original assignment specifications and requirements
 
-### LTspice Simulations
-- **[LTspice Directory](ltspice/)** — All simulation files and netlists
-  - **`noise/`** — Output noise spectral density simulation
-    - Integrated noise from 10 kHz to 100 GHz
-    - SNR extraction and verification
-  - **`A_AB/`** — AC analysis and frequency response
-    - Open-loop gain (A) Bode plot
-    - Loop gain (Aβ) analysis
-    - Closed-loop transfer function and -3 dB bandwidth verification
-  - **`settling/`** — Transient step-response simulations
-    - Closed-loop settling behavior
-    - Extraction of Tsettle, T40dB, and T48.69dB metrics
-    - Accuracy vs. time validation
+### LTspice Simulation Files
+- **[Settling Response Simulation](CMOS1_HW2_setteling.asc)** — Transient step-response simulation
+  - Used to extract Tsettle, T40dB and T48.69dB metrics
+  - Closed-loop settling behavior verification
+
+- **[AC Analysis & Frequency Response](CMOS_1_HW2_A_AB.asc)** — Bode plot simulations
+  - Open-loop gain (A) and loop gain (Aβ) analysis
+  - Closed-loop transfer function and -3 dB bandwidth verification
+
+- **[Noise Spectral Density](CMOS_1_HW2_noise.asc)** — Noise simulation
+  - Output noise spectral density analysis
+  - Integrated noise from 10 kHz to 100 GHz
+  - SNR extraction and verification
 
 ## Tools and Technology
 
