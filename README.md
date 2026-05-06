@@ -1,6 +1,6 @@
 # Discrete-Time Folded-Cascode OpAmp Design
 
-Design and simulation of a fully differential folded-cascode operational amplifier in 0.18 µm CMOS, completed as the final project of EE4520 Analog CMOS Design 1 at TU Delft (MSc Microelectronics, 2025-2026).
+Design and simulation of a fully differential folded-cascode operational amplifier in 0.18 µm CMOS, completed as the final project of EE4520 Analog CMOS Design 1 at TU Delft (MSc Microelectronics, 2025-2026), final grade 8.5/10.
 
 ## Project Overview
 
