@@ -1,11 +1,10 @@
-
 # Discrete-Time Folded-Cascode OpAmp Design
 
 Design and simulation of a fully differential folded-cascode operational amplifier in 0.18 µm CMOS, completed as the final project of EE4520 Analog CMOS Design 1 at TU Delft (MSc Microelectronics, 2025-2026).
 
 ## Project Overview
 
-The amplifier is intended for discrete-time applications and is placed in a closed-loop feedback configuration with a target gain of 8 (≈ 18 dB). The core uses ideal gain-boosting blocks and an ideal common-mode feedback (CMFB), implemented as voltage-controlled voltage sources, so that the focus remains on the folded-cascode core itself. The cascode bias circuit was designed in a preparatory homework and reused here.
+The amplifier is intended for discrete-time applications and is placed in a closed-loop feedback configuration with a target gain of 8 (≈ 18 dB). The core uses ideal gain-boosting blocks and an input-pair cascode bias circuit with CMFB.
 
 The goal was to meet a set of individually assigned specifications (settling accuracy, settling time, SNR) at the lowest possible power dissipation, captured by a Figure-of-Merit:
 
@@ -38,18 +37,61 @@ Final grade: 8.5/10
 
 ## Repository Contents
 
-- `report/` — final report submitted for EE4520, including the table of results, annotated schematics, all plots and the design methodology
-- `schematics/` — annotated schematics with node voltages and branch currents
-- `ltspice/` — LTspice simulation files:
-  - `noise` — output noise spectral density simulation, integrated from 10 kHz to 100 GHz
-  - `A_AB` — open-loop gain A and loop gain Aβ Bode plots (gain and phase), plus the closed-loop transfer function for the -3 dB bandwidth
-  - `settling` — transient step-response simulation used to extract Tsettle, T40dB and T48.69dB
+### Report & Documentation
+- **[Final Report](report/)** — final report submitted for EE4520
+  - Table of results and specifications
+  - Design methodology and optimization process
+  - Performance analysis and key design tradeoffs
+  - Annotated schematics with node voltages and branch currents
+  - Complete set of simulation plots (transient, AC, noise)
+  
+### Schematics
+- **[Schematics Directory](schematics/)** — Circuit design files with detailed annotations
+  - Full folded-cascode opamp with gain-boosting
+  - Cascode bias circuit and CMFB
+  - Node voltage labels and branch currents for verification
+  - High-resolution images for documentation
+
+### LTspice Simulations
+- **[LTspice Directory](ltspice/)** — All simulation files and netlists
+  - **`noise/`** — Output noise spectral density simulation
+    - Integrated noise from 10 kHz to 100 GHz
+    - SNR extraction and verification
+  - **`A_AB/`** — AC analysis and frequency response
+    - Open-loop gain (A) Bode plot
+    - Loop gain (Aβ) analysis
+    - Closed-loop transfer function and -3 dB bandwidth verification
+  - **`settling/`** — Transient step-response simulations
+    - Closed-loop settling behavior
+    - Extraction of Tsettle, T40dB, and T48.69dB metrics
+    - Accuracy vs. time validation
 
 ## Tools and Technology
 
-- LTspice (0.18 µm CMOS process, custom parameter set without 1/f noise model as specified by the assignment)
-- Supply: 1.8 V (separate supply for the bias block to isolate its power consumption from the FoM)
+- **Simulator:** LTspice
+- **Process:** 0.18 µm CMOS (custom parameter set without 1/f noise model as per assignment specifications)
+- **Supply Voltage:** 1.8 V (separate supply for bias block to isolate power consumption from FoM calculation)
+- **Design Methodology:** Iterative optimization with performance-to-power tradeoff analysis
 
-## Course
+## Design Highlights
 
-EE4520 Analog CMOS Design 1, TU Delft, MSc Microelectronics, 2025-2026
+- **Gain-Boosting:** Ideal gain-boosting blocks implemented for improved DC gain while maintaining stability
+- **Bias Circuit:** Carefully designed cascode bias with Vgt ≈ 100 mV to ensure all devices operate in saturation
+- **CMFB:** Common-mode feedback circuit for fully differential architecture stability
+- **Power Optimization:** Achieved 175.95 dB FoM through systematic transistor sizing and bias current optimization
+- **Settling Performance:** 54 dB accuracy achieved in 559 ns at minimal power (22.1 µW)
+
+## Specifications Met
+
+✓ SNR: 68.62 dB (spec: 68.53 dB)  
+✓ Settling Time: 559 ns (spec: 560 ns)  
+✓ Settling Accuracy: 54 dB (spec: 54 dB)  
+✓ Power Dissipation: 22.1 µW (minimized)  
+✓ Figure-of-Merit: 175.95 dB (spec: ≥ 174 dB)
+
+## Course Information
+
+**Course:** EE4520 Analog CMOS Design 1  
+**Institution:** TU Delft, MSc Microelectronics  
+**Academic Year:** 2025-2026  
+**Grade:** 8.5/10
