@@ -33,7 +33,7 @@ Final grade: 8.5/10
 - Built the full folded-cascode opamp with ideal gain-boosting and CMFB on top of the bias block
 - Performed transient (step-response), AC (open-loop and closed-loop) and noise simulations in LTspice
 - Iteratively optimized bias currents, transistor sizing and capacitor values to minimize power while satisfying all settling and noise specifications
-- Analyzed key tradeoffs (gm vs DC gain, input pair sizing vs noise, global scaling vs noise spectrum, cascode bias balance vs output resistance) and documented the design methodology
+- Analyzed key tradeoffs, documented the design methodology, explaining the reasoning behind each design choice and the tradeoffs involved
 
 ## Repository Contents
 
