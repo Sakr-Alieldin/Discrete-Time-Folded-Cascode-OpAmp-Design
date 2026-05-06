@@ -12,7 +12,7 @@ The goal was to meet a set of individually assigned specifications (settling acc
 FoM[dB] = -10 · log10(2π · Power · T_8.6dB / SNR²)
 ```
 
-where T_8.6dB ≈ τcl (the closed-loop time constant), making the FoM independent of the specific settling accuracy each student was assigned.
+where T_8.6dB ≈ τcl (the closed-loop time constant).
 
 ## Results
 
